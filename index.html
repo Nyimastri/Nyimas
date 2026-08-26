@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karipap Pusing Currylicious - Comfort Food Crispy & Gurih</title>
+  <style>
+    /* Reset CSS dasar */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #F7EBDD;
+      color: #E8D2B8;
+      font-family: sans-serif;
+      line-height: 1.6;
+      /* Styling text-shadow agar teks tetap terbaca jelas di berbagai kondisi */
+      text-shadow: 1px 1px 2px rgba(40, 20, 10, 0.85);
+    }
+
+    /* Tipografi Judul */
+    h1, h2, h3, h4 {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Container Pembungkus UTAMA */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Card/Kotak Konten (Gelap agar kontras tinggi dengan warna font #E8D2B8) */
+    .card-dark {
+      background-color: #3A2418;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 30px 0;
+      box-shadow: 0 10px 25px rgba(58, 36, 24, 0.15);
+    }
+
+    /* Styling Tombol CTA */
+    .btn-cta {
+      display: inline-block;
+      background-color: #3A2418;
+      color: #795548;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 42px;
+      border-radius: 50px;
+      font-size: 1.15rem;
+      border: 2px solid #795548;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      text-align: center;
+      text-shadow: none; /* Menjaga kebersihan warna font tombol */
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+      background-color: #2b1a11;
+      color: #E8D2B8;
+      border-color: #E8D2B8;
+    }
+
+    /* SECTION 1: HEADER (HERO SECTION) */
+    header.hero {
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #3A2418, #2a180f);
+      border-radius: 20px;
+      padding: 50px 30px;
+      box-shadow: 0 12px 30px rgba(58, 36, 24, 0.25);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: #E8D2B8;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .highlight-item {
+      background: rgba(232, 210, 184, 0.1);
+      border: 1px solid rgba(232, 210, 184, 0.25);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
+
+    /* SECTION 2: DESKRIPSI PRODUK */
+    .product-section {
+      text-align: center;
+    }
+
+    .product-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #E8D2B8;
+    }
+
+    .product-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    /* SECTION 3: FITUR & VALUE PRODUK */
+    .features-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background-color: #2a180f;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(232, 210, 184, 0.15);
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: #E8D2B8;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+    }
+
+    /* SECTION 4 & 7: CALL TO ACTION (CTA) */
+    .cta-wrapper {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    /* SECTION 5: TESTIMONI */
+    .testimonials-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background-color: #2a180f;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #795548;
+      text-align: left;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #E8D2B8;
+    }
+
+    /* SECTION 6: PENAWARAN SPESIAL */
+    .special-offer {
+      text-align: center;
+      border: 2px dashed #E8D2B8;
+      position: relative;
+    }
+
+    .special-offer h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .offer-tag {
+      background-color: #795548;
+      color: #F7EBDD;
+      text-shadow: none;
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .offer-desc {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    /* SECTION 8: FOOTER */
+    footer {
+      background-color: #21130b;
+      color: #E8D2B8;
+      padding: 50px 0 25px;
+      margin-top: 60px;
+      border-top: 4px solid #3A2418;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #E8D2B8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(232, 210, 184, 0.15);
+      padding-top: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES (MOBILE) */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      .card-dark, .hero-card {
+        padding: 30px 20px;
+      }
+      .btn-cta {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1.05rem;
+      }
+      .product-description {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- 1. HEADER (HERO SECTION) -->
+    <header class="hero">
+      <div class="hero-card">
+        <h1 class="hero-title">CRISPY DI LUAR. GURIH DI DALAM. SUSAH BERHENTI.</h1>
+        <p class="hero-subtitle">
+          Karipap pusing dengan lapisan flaky yang renyah dan isian gurih yang bikin satu aja nggak cukup.
+        </p>
+        <div class="hero-highlights">
+          <span class="highlight-item">🥐 Flaky & crispy</span>
+          <span class="highlight-item">🍗 Isian gurih melimpah</span>
+          <span class="highlight-item">🔥 Paling nikmat disantap hangat</span>
+        </div>
+        <p style="margin-top: 20px; font-weight: bold;">Siap jatuh cinta sama lapisannya?</p>
+      </div>
+    </header>
+
+    <!-- 2. DESKRIPSI PRODUK -->
+    <section class="card-dark product-section">
+      <h2>KARIPAP PUSING CURRYLICIOUS</h2>
+      <p class="product-description">
+        Lapisan renyah yang bikin susah berhenti. Karipap pusing dengan kulit berlapis yang flaky dan crispy di luar, namun tetap lembut di dalam. Setiap gigitan dipenuhi isian gurih ayam dan kentang berbumbu yang dibuat untuk jadi teman ngemil kapan saja. Dibuat dengan teknik pusing untuk menghasilkan lapisan kulit yang cantik dan tekstur yang khas—kokoh saat digigit, renyah saat dimakan, dan tetap nikmat sampai gigitan terakhir. Currylicious — sekali gigit, langsung paham bedanya.
+      </p>
+    </section>
+
+    <!-- 3. FITUR & VALUE PRODUK -->
+    <section class="card-dark features-section">
+      <h2>KENAPA CURRYLICIOUS?</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>BUKAN SEKADAR KARIPAP</h3>
+          <p>Kami percaya camilan sederhana bisa dibuat dengan lebih serius. Setiap karipap dibuat dengan perhatian pada tekstur, rasa, dan pengalaman di setiap gigitan.</p>
+        </article>
+        <article class="feature-card">
+          <h3>TEKSTUR YANG JADI ANDALAN</h3>
+          <p>Kulit berlapis dengan sensasi crispy dan flaky menjadi karakter utama Currylicious. Bukan sekadar renyah, tapi punya tekstur yang terasa saat digigit.</p>
+        </article>
+        <article class="feature-card">
+          <h3>COMFORT FOOD YANG PRAKTIS</h3>
+          <p>Cocok untuk menemani waktu santai, teman minum teh atau kopi, bekal, maupun sekadar mengganjal lapar di tengah kesibukan.</p>
+        </article>
+        <article class="feature-card">
+          <h3>DIBUAT UNTUK DINIKMATI</h3>
+          <p>Dari kulit hingga isian, semuanya dirancang agar satu karipap terasa cukup memuaskan—namun tetap bikin ingin mengambil satu lagi. Currylicious — comfort food dengan lapisan yang bikin jatuh cinta.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. CALL TO ACTION (CTA) 1 -->
+    <div class="cta-wrapper">
+      <a href="https://wa.me/6287753241048" class="btn-cta" target="_blank" rel="noopener noreferrer">PESAN SEKARANG</a>
+    </div>
+
+    <!-- 5. TESTIMONI PRODUK -->
+    <section class="card-dark testimonials-section">
+      <h2>APA KATA MEREKA?</h2>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <p class="testimonial-text">"Kulit pusingnya beneran flaky banget! Pas digigit renyah krispi, isian rempah ayam kentangnya melimpah dan gurihnya pas. Beli satu porsi langsung habis sendiri!"</p>
+          <p class="testimonial-author">— Sarah A., Pekanbaru</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-text">"Cocok banget buat teman ngopi sore. Tetap krispi walau udah agak dingin, isian karinya wangi dan nggak pelit. Fix bakal order langganan!"</p>
+          <p class="testimonial-author">— Budi Santoso, Kuliner Enthusiast</p>
+        </article>
+        <article class="testimonial-card">
+          <p class="testimonial-text">"Beda banget sama karipap biasa. Lapisan kulitnya cantik dan pas digigit kerasa banget bedanya. Sekali coba Currylicious langsung paham kenapa dinamain gitu."</p>
+          <p class="testimonial-author">— Dina M., Ibu Rumah Tangga</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. PENAWARAN SPESIAL -->
+    <section class="card-dark special-offer">
+      <span class="offer-tag">PENAWARAN SPESIAL HARI INI</span>
+      <h2>PESAN PAKET SPESIAL HARI INI!</h2>
+      <p class="offer-desc">Dapatkan Karipap Pusing Currylicious hangat langsung dikirim ke tempat Anda. Stok harian terbatas untuk menjaga kualitas kerenyahan!</p>
+    </section>
+
+    <!-- 7. CALL TO ACTION (CTA) 2 -->
+    <div class="cta-wrapper">
+      <a href="https://wa.me/6287753241048" class="btn-cta" target="_blank" rel="noopener noreferrer">BELI SEKARANG</a>
+    </div>
+
+  </main>
+
+  <!-- 8. FOOTER (INFORMASI PERUSAHAAN) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>KARIPAP CURRYLICIOUS</h3>
+          <p>Comfort food dengan lapisan kulit flaky, crispy, dan isian gurih melimpah yang bikin jatuh cinta.</p>
+        </div>
+        <div class="footer-col">
+          <h3>ALAMAT KAMI</h3>
+          <p>Jl. Taman Karya Gg. Bata, Kelurahan Tuahkarya, Kecamatan Tampan, Pekanbaru, Riau</p>
+        </div>
+        <div class="footer-col">
+          <h3>HUBUNGI KAMI</h3>
+          <p>WhatsApp: <a href="https://wa.me/6287753241048" target="_blank" rel="noopener noreferrer">+62 877-5324-1048</a></p>
+          <p>Instagram: <a href="https://instagram.com/currylicious.id" target="_blank" rel="noopener noreferrer">@currylicious.id</a></p>
+          <p>TikTok: <a href="https://tiktok.com/@currylicious" target="_blank" rel="noopener noreferrer">@currylicious</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 Karipap Currylicious. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
