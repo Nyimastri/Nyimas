@@ -17,7 +17,6 @@
       color: #E8D2B8;
       font-family: sans-serif;
       line-height: 1.6;
-      /* Styling text-shadow agar teks tetap terbaca jelas di berbagai kondisi */
       text-shadow: 1px 1px 2px rgba(40, 20, 10, 0.85);
     }
 
@@ -36,7 +35,7 @@
       padding: 0 20px;
     }
 
-    /* Card/Kotak Konten (Gelap agar kontras tinggi dengan warna font #E8D2B8) */
+    /* Card/Kotak Konten */
     .card-dark {
       background-color: #3A2418;
       border-radius: 16px;
@@ -62,7 +61,7 @@
       transition: all 0.3s ease;
       letter-spacing: 1px;
       text-align: center;
-      text-shadow: none; /* Menjaga kebersihan warna font tombol */
+      text-shadow: none;
     }
 
     .btn-cta:hover {
@@ -97,6 +96,23 @@
       font-size: 1.1rem;
       margin-bottom: 25px;
       opacity: 0.95;
+    }
+
+    /* Styling Gambar di Hero Section */
+    .hero-image-container {
+      margin: 25px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid rgba(232, 210, 184, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      object-fit: cover;
     }
 
     .hero-highlights {
@@ -303,6 +319,12 @@
         <p class="hero-subtitle">
           Karipap pusing dengan lapisan flaky yang renyah dan isian gurih yang bikin satu aja nggak cukup.
         </p>
+
+        <!-- Bagian Gambar Sesuai Permintaan -->
+        <div class="hero-image-container">
+          <img src="IMG_20260826_223025.jpg" alt="Karipap Pusing Currylicious" class="hero-image">
+        </div>
+
         <div class="hero-highlights">
           <span class="highlight-item">🥐 Flaky & crispy</span>
           <span class="highlight-item">🍗 Isian gurih melimpah</span>
